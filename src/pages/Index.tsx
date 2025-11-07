@@ -10,6 +10,9 @@ const Index = () => {
   const [guestCount, setGuestCount] = useState([100]);
   const [hours, setHours] = useState([4]);
   const [scrolled, setScrolled] = useState(false);
+  const [formData, setFormData] = useState({ name: '', phone: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -275,18 +278,56 @@ const Index = () => {
             <div>
               <Card className="bg-dark/50 border-gold/30">
                 <CardContent className="p-6">
-                  <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                  <form className="space-y-4" onSubmit={async (e) => {
+                    e.preventDefault();
+                    setIsSubmitting(true);
+                    setSubmitMessage('');
+                    
+                    try {
+                      const response = await fetch('https://functions.poehali.dev/54910eb6-f355-4ecb-986d-714b62546c8e', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                      });
+                      
+                      if (response.ok) {
+                        setSubmitMessage('Спасибо! Ваша заявка отправлена.');
+                        setFormData({ name: '', phone: '' });
+                      } else {
+                        setSubmitMessage('Ошибка отправки. Попробуйте позже.');
+                      }
+                    } catch (error) {
+                      setSubmitMessage('Ошибка отправки. Попробуйте позже.');
+                    } finally {
+                      setIsSubmitting(false);
+                    }
+                  }}>
                     <Input 
                       placeholder="Ваше имя" 
                       className="bg-darker border-gold/20 focus:border-gold"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
                     />
                     <Input 
                       type="tel" 
                       placeholder="Телефон" 
                       className="bg-darker border-gold/20 focus:border-gold"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      required
                     />
-                    <Button className="w-full bg-gold hover:bg-gold/90 text-dark font-semibold">
-                      Отправить заявку
+                    {submitMessage && (
+                      <p className={`text-sm ${submitMessage.includes('Спасибо') ? 'text-gold' : 'text-red-400'}`}>
+                        {submitMessage}
+                      </p>
+                    )}
+                    <Button 
+                      type="submit"
+                      className="w-full bg-gold hover:bg-gold/90 text-dark font-semibold"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                     </Button>
                   </form>
                 </CardContent>
