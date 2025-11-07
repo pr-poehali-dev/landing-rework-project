@@ -92,7 +92,7 @@ const Index = () => {
 
       <section id="преимущества" className="py-20 px-4 bg-darker/50">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-display font-bold text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-16">
             Наши <span className="text-gold">преимущества</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -109,7 +109,7 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-4">
                     <Icon name={item.icon} className="text-gold" size={32} />
                   </div>
-                  <CardTitle className="text-gold text-2xl font-display">{item.title}</CardTitle>
+                  <CardTitle className="text-gold text-xl md:text-2xl font-display">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-300">{item.desc}</p>
@@ -122,7 +122,7 @@ const Index = () => {
 
       <section id="услуги" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-display font-bold text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-16">
             Наши <span className="text-gold">услуги</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -134,8 +134,8 @@ const Index = () => {
             ].map((service, index) => (
               <Card key={index} className="bg-gradient-to-br from-dark to-darker border-gold/30 hover-scale">
                 <CardHeader>
-                  <CardTitle className="text-3xl font-display text-gold">{service.title}</CardTitle>
-                  <p className="text-2xl text-gray-300 mt-2">{service.price}</p>
+                  <CardTitle className="text-xl sm:text-2xl md:text-3xl font-display text-gold">{service.title}</CardTitle>
+                  <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mt-2">{service.price}</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -155,7 +155,7 @@ const Index = () => {
 
       <section id="отзывы" className="py-20 px-4 bg-darker/50">
         <div className="container mx-auto">
-          <h2 className="text-5xl font-display font-bold text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-16">
             Отзывы <span className="text-gold">клиентов</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -185,7 +185,7 @@ const Index = () => {
 
       <section id="калькулятор" className="py-20 px-4">
         <div className="container mx-auto max-w-3xl">
-          <h2 className="text-5xl font-display font-bold text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-16">
             Калькулятор <span className="text-gold">стоимости</span>
           </h2>
           <Card className="bg-gradient-to-br from-dark to-darker border-gold/30">
@@ -225,7 +225,7 @@ const Index = () => {
 
                 <div className="bg-gold/10 rounded-lg p-6 text-center border border-gold/30">
                   <p className="text-gray-300 mb-2">Ориентировочная стоимость:</p>
-                  <p className="text-5xl font-bold text-gold">{calculatePrice().toLocaleString('ru-RU')} ₽</p>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold">{calculatePrice().toLocaleString('ru-RU')} ₽</p>
                   <p className="text-sm text-gray-400 mt-2">Финальная цена определяется после консультации</p>
                 </div>
 
@@ -243,7 +243,7 @@ const Index = () => {
 
       <section id="контакты" className="py-20 px-4 bg-darker/50">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-5xl font-display font-bold text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-16">
             Свяжитесь <span className="text-gold">с нами</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
