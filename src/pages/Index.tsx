@@ -69,6 +69,7 @@ const Index = () => {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-6 animate-fade-in leading-tight">
             Эксклюзивная охрана
             <span className="block text-gold mt-2">премиум-мероприятий</span>
+            <span className="block text-white mt-2 text-3xl sm:text-4xl md:text-5xl">личная охрана</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 animate-fade-in">
             Профессиональная защита вашего мероприятия с гарантией безопасности и конфиденциальности
