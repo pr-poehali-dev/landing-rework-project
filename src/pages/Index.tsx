@@ -304,7 +304,7 @@ const Index = () => {
                   }}>
                     <Input 
                       placeholder="Ваше имя" 
-                      className="bg-darker border-gold/20 focus:border-gold"
+                      className="bg-darker border-gold/20 focus:border-gold text-white"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
@@ -312,7 +312,7 @@ const Index = () => {
                     <Input 
                       type="tel" 
                       placeholder="Телефон" 
-                      className="bg-darker border-gold/20 focus:border-gold"
+                      className="bg-darker border-gold/20 focus:border-gold text-white"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
