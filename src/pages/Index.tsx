@@ -234,7 +234,7 @@ const Index = () => {
                 </div>
 
                 <Button 
-                  className="w-full bg-gold hover:bg-gold/90 text-dark font-semibold py-6 text-lg"
+                  className="w-full bg-gold hover:bg-gold/90 text-dark font-semibold py-6 text-base sm:text-lg px-4"
                   onClick={() => scrollToSection('контакты')}
                 >
                   Получить точный расчет
